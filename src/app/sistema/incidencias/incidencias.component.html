@@ -20,7 +20,53 @@
                 <td>{{element.total_exames}}</td>
             </tr>
         </table>
-
     </mat-card>
+    <hr>
+    <mat-card>
+        <mat-card-subtitle>
+            Consulta de exames de mamografia - Relação de incidencias
+        </mat-card-subtitle>
+        <!-- Template do angular para tabelas -->
+        <table matSort (matSortChange)="incidenciaExame">
+            <tr>
+                <th mat-sort-header="id">ID</th>
+                <th mat-sort-header="regiao_id">Região_id</th>
+                <th mat-sort-header="mes">Mes</th>
+                <th mat-sort-header="faixa_id">Faixa_id</th>
+                <th mat-sort-header="qnt_exames">Quantidade de Exames</th>
+            </tr>
+    
+            <tr *ngFor="let element of incidenciaExame">
+                <td>{{element.id}}</td>
+                <td>{{element.regiao_id}}</td>
+                <td>{{element.mes}}</td>
+                <td>{{element.faixa_id}}</td>
+                <td>{{element.qnt_exames}}</td>
+            </tr>
+        </table>
+    </mat-card>
+    <hr>
+    <mat-card>
+        <mat-card-subtitle>
+            Consulta de exames de mamografia - Relação de faixa etarias
+        </mat-card-subtitle>
+        <!-- Template do angular para tabelas -->
+        <table matSort (matSortChange)="faixaEtaria">
+            <tr>
+                <th mat-sort-header="id">ID</th>
+                <th mat-sort-header="faixa_i">Faixa Inicial</th>
+                <th mat-sort-header="faixa_n">Faixa Final</th>
+                <th mat-sort-header="descricao">Descrição</th>
+            </tr>
+    
+            <tr *ngFor="let element of faixaEtaria">
+                <td>{{element.id}}</td>
+                <td>{{element.faixa_i}}</td>
+                <td>{{element.faixa_n}}</td>
+                <td>{{element.descricao}}</td>
+            </tr>
+        </table>
+    </mat-card>
+
 
 </div>
