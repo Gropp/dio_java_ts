@@ -4,7 +4,7 @@
 <div class="margem">
     <mat-card>
         <mat-card-subtitle>
-            Consulta de exames de mamografia - Relação de Regiões
+            Consulta de exames de mamografia - Relação de Regiões - recebendo do mySQL
         </mat-card-subtitle>
         <!-- Template do angular para tabelas -->
         <table matSort (matSortChange)="regioes">
@@ -24,10 +24,10 @@
     <br />
     <mat-card>
         <mat-card-subtitle>
-            Consulta de exames de mamografia - Relação de incidencias
+            Consulta de exames de mamografia - Relação de incidencias - recebendo um json
         </mat-card-subtitle>
         <!-- Template do angular para tabelas -->
-        <table matSort (matSortChange)="incidenciaExame">
+        <table matSort (matSortChange)="incidenciaexame">
             <tr>
                 <th mat-sort-header="id">ID</th>
                 <th mat-sort-header="regiao_id">Região_id</th>
@@ -36,7 +36,7 @@
                 <th mat-sort-header="qnt_exames">Quantidade de Exames</th>
             </tr>
     
-            <tr *ngFor="let element of incidenciaExame">
+            <tr *ngFor="let element of incidenciaexame">
                 <td>{{element.id}}</td>
                 <td>{{element.regiao_id}}</td>
                 <td>{{element.mes}}</td>
@@ -48,10 +48,10 @@
     <br />
     <mat-card>
         <mat-card-subtitle>
-            Consulta de exames de mamografia - Relação de faixa etarias
+            Consulta de exames de mamografia - Relação de faixa etarias - objeto declarado no ts
         </mat-card-subtitle>
         <!-- Template do angular para tabelas -->
-        <table matSort (matSortChange)="faixaEtaria">
+        <table matSort (matSortChange)="faixaetaria">
             <tr>
                 <th mat-sort-header="id">ID</th>
                 <th mat-sort-header="faixa_i">Faixa Inicial</th>
@@ -59,7 +59,7 @@
                 <th mat-sort-header="descricao">Descrição</th>
             </tr>
     
-            <tr *ngFor="let element of faixaEtaria">
+            <tr *ngFor="let element of faixaetaria">
                 <td>{{element.id}}</td>
                 <td>{{element.faixa_i}}</td>
                 <td>{{element.faixa_n}}</td>

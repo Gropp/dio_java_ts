@@ -16,9 +16,9 @@ export class IncidenciasComponent implements OnInit {
 
   //declarar as variaveis usadas nos modulos
 
-  regioes: Regiao[] = [];
-  incidenciaExame: IncidenciaExame[] = [];
-  faixaEtaria: FaixaEtaria[] = [];
+  incidenciaexame: IncidenciaExame[] = [];
+  regioes: Regiao[] = []; 
+  faixaetaria: FaixaEtaria[] = [];
 
   //declara no constructor
   constructor(private regiaoService:RegiaoService, private incidenciaExameService:IncidenciaExameService, private faixaEtariaService:FaixaEtariaService ) { }
@@ -26,9 +26,11 @@ export class IncidenciasComponent implements OnInit {
   //executa quando startar a aplicacao
   ngOnInit(): void {
     //quando o componente abrir ele busca a lista de regioes
-    this.regioes = this.regiaoService.listRegioes();
-    this.incidenciaExame = this.incidenciaExameService.listIncidenciaExame();
-    this.faixaEtaria = this.faixaEtariaService.listFaixaEtaria();
+    //como listRegioes e observable tem que converter subscribe
+    this.regiaoService.listRegioes().subscribe(regioes => {this.regioes = regioes});
+    this.incidenciaExameService.listIncidenciaExame().subscribe(incidenciaexame => {this.incidenciaexame = incidenciaexame});
+    // this.incidenciaExame = this.incidenciaExameService.listIncidenciaExame();
+    this.faixaetaria = this.faixaEtariaService.listFaixaEtaria();
   }
 
 }
